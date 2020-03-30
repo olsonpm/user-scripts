@@ -3,7 +3,7 @@
 // @namespace      Violentmonkey Scripts
 // @match          https://mail.protonmail.com/*
 // @name           mail.protonmail.com
-// @version        0.1.1
+// @version        0.1.2
 // @author         Phil
 // @updateURL      https://raw.githubusercontent.com/olsonpm/user-scripts/dev/mail.protonmail.com.user.js
 // ==/UserScript==
@@ -17,27 +17,7 @@
 //    https://stackoverflow.com/a/52809105/984407
 //
 
-history.pushState = (f =>
-  function pushState() {
-    var ret = f.apply(this, arguments);
-    window.dispatchEvent(new Event("pushstate"));
-    window.dispatchEvent(new Event("locationchange"));
-    return ret;
-  })(history.pushState);
-
-history.replaceState = (f =>
-  function replaceState() {
-    var ret = f.apply(this, arguments);
-    window.dispatchEvent(new Event("replacestate"));
-    window.dispatchEvent(new Event("locationchange"));
-    return ret;
-  })(history.replaceState);
-
-window.addEventListener("popstate", () => {
-  window.dispatchEvent(new Event("locationchange"));
-});
-
-window.addEventListener("locationchange", fixTitle);
+setInterval(fixTitle, 100);
 
 function fixTitle() {
   document.title = document.title.replace(/^\(\d+\) /, "");

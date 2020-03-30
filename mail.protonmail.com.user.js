@@ -3,7 +3,7 @@
 // @namespace      Violentmonkey Scripts
 // @match          https://mail.protonmail.com/*
 // @name           mail.protonmail.com
-// @version        0.1.0
+// @version        0.1.1
 // @author         Phil
 // @updateURL      https://raw.githubusercontent.com/olsonpm/user-scripts/dev/mail.protonmail.com.user.js
 // ==/UserScript==

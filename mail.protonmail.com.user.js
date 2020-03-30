@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           mail.protonmail.com scripts
 // @namespace      Violentmonkey Scripts
-// @match          https://mail.protonmail.com/
+// @match          https://mail.protonmail.com/*
 // @name           mail.protonmail.com
 // @version        0.1.0
 // @author         Phil
